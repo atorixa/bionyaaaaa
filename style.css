@@ -205,21 +205,41 @@ body {
   pointer-events: none;
 }
 
-.bio-text {
-  text-align: center;
+.bio-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 25px 0;
+  position: relative;
+  z-index: 20; /* Повыше, чтоб ничем не перекрывало */
+}
+
+.bio-box {
+background: rgba(0, 0, 0, 0.85) !important; /* Глубокий черный */
+padding: 8px 16px;
+border-radius: 0 !important; /* Острые как бритва */
+border: 1px solid rgba(255, 255, 255, 0.15);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bio-text-gradient {
+  display: inline-block;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 18px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   
-  /* Тот самый градиент */
-  background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Принудительно делаем текст прозрачным, чтобы проявился градиент */
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
   
-  /* Немного магии, чтобы он медленно двигался */
-  animation: shine 4s linear infinite;
+  /* Ебейший градиент */
+  background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  
+  background-size: 200% auto !important;
+  animation: shine 3s linear infinite;
 }
 
 @keyframes shine {
