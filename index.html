@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>atorixa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- BG -->
+  <div class="bg-img" aria-hidden="true"></div>
+  <div class="bg-blur-radial" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- Ambient trans bands -->
+  <div class="bg-trans" aria-hidden="true">
+    <div class="bg-trans-band" style="--c:#5BCEFA;--y:8%"></div>
+    <div class="bg-trans-band" style="--c:#F5A9B8;--y:25%"></div>
+    <div class="bg-trans-band" style="--c:#FFFFFF;--y:50%"></div>
+    <div class="bg-trans-band" style="--c:#F5A9B8;--y:75%"></div>
+    <div class="bg-trans-band" style="--c:#5BCEFA;--y:92%"></div>
+  </div>
+
+  <!-- Particles -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Card -->
+  <main class="card">
+    <div class="flag-bar">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="card-body">
+      <!-- Avatar -->
+      <div class="avatar-section">
+        <div class="avatar-wrap">
+          <div class="avatar-border"></div>
+          <img class="avatar" src="https://github.com/atorixa.png" alt="atorixa"
+            onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23f8f8fc%22 width=%22100%22 height=%22100%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%235BCEFA%22 font-size=%2240%22 font-family=%22monospace%22>A</text></svg>'" />
+        </div>
+      </div>
+
+      <!-- Name -->
+      <h1 class="name">atorixa</h1>
+
+      <!-- Tags -->
+      <div class="tags">
+        <div class="tag">
+          <img class="tag-img" src="https://i.ibb.co/CKZ85x7X/pngegg.png" alt="Cubase" />
+          <span class="tag-label">Cubase</span>
+        </div>
+        <div class="tag-sep"></div>
+        <div class="tag">
+          <img class="tag-img" src="https://i.ibb.co/Wv9N012r/net-framework-c-net-core-software-framework-mono-studio-e5699c70480d0412fc89fe2394946016.png" alt="C#" />
+          <span class="tag-label">C#</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Links -->
+      <nav class="links">
+
+        <a href="https://soundcloud.com/atorixa" target="_blank" rel="noopener" class="link" data-platform="soundcloud">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.56 8.87V17h8.76c1.85 0 3.35-1.5 3.35-3.35 0-1.85-1.5-3.35-3.35-3.35-.35 0-.69.05-1.01.15C18.95 8.21 17.16 6.5 14.96 6.5c-1.2 0-2.28.5-3.06 1.3-.1.1-.23.37-.34 1.07zM0 13.5v3c0 .28.22.5.5.5s.5-.22.5-.5v-3c0-.28-.22-.5-.5-.5s-.5.22-.5.5zm2-1v5c0 .28.22.5.5.5s.5-.22.5-.5v-5c0-.28-.22-.5-.5-.5s-.5.22-.5.5zm2-1.5v7.5c0 .28.22.5.5.5s.5-.22.5-.5V11c0-.28-.22-.5-.5-.5s-.5.22-.5.5zm2-1v9c0 .28.22.5.5.5s.5-.22.5-.5v-9c0-.28-.22-.5-.5-.5s-.5.22-.5.5zm2-1v11c0 .28.22.5.5.5s.5-.22.5-.5V9c0-.28-.22-.5-.5-.5s-.5.22-.5.5z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">SoundCloud</span>
+            <span class="link-desc">music & beats</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+        <a href="https://t.me/+w62HjsZRsLBiMGI6" target="_blank" rel="noopener" class="link" data-platform="telegram">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">Telegram</span>
+            <span class="link-desc">ru lang</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+        <a href="https://x.com/atorixa00" target="_blank" rel="noopener" class="link" data-platform="x">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">X</span>
+            <span class="link-desc">@atorixa00</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+        <a href="https://youtube.com/@atorixa00" target="_blank" rel="noopener" class="link" data-platform="youtube">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">YouTube</span>
+            <span class="link-desc">@atorixa00</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+        <a href="https://twitch.tv/atorixa_owo" target="_blank" rel="noopener" class="link" data-platform="twitch">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">Twitch</span>
+            <span class="link-desc">atorixa_owo</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+        <a href="https://github.com/atorixa" target="_blank" rel="noopener" class="link" data-platform="github">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">GitHub</span>
+            <span class="link-desc">atorixa</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+        <a href="mailto:atorixa@proton.me" class="link" data-platform="mail">
+          <div class="link-shine"></div>
+          <div class="link-bg-hover"></div>
+          <div class="link-icon-box">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="0"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-name">Email</span>
+            <span class="link-desc">atorixa@proton.me</span>
+          </div>
+          <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+        </a>
+
+      </nav>
+    </div>
+  </main>
+
+  <script>
+    /* ==========================================
+       PARTICLES — Full screen + cursor reactive
+       ========================================== */
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    let mouse = { x: -9999, y: -9999, active: false };
+
+function resize() {
+  // Используем clientWidth, чтобы не считать ширину полосы прокрутки
+  W = canvas.width = document.documentElement.clientWidth;
+  H = canvas.height = document.documentElement.clientHeight;
+}
+// Вызываем один раз сразу
+resize();
+
+// И добавь небольшую задержку при ресайзе окна, 
+// чтобы браузер успел пересчитать стили
+window.addEventListener('resize', () => {
+  clearTimeout(window.resizeTimer);
+  window.resizeTimer = setTimeout(resize, 100);
+});
+
+    document.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
+    document.addEventListener('mouseleave', () => { mouse.active = false; });
+
+    const COLS = [
+      { r:91,  g:206, b:250 },
+      { r:245, g:169, b:184 },
+      { r:255, g:255, b:255 },
+      { r:91,  g:206, b:250 },
+      { r:245, g:169, b:184 },
+    ];
+
+    class P {
+      constructor() { this.init(); }
+      init() {
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.sz = Math.random() * 2.8 + 0.8;
+        this.bsz = this.sz;
+        this.vx = (Math.random() - 0.5) * 0.25;
+        this.vy = (Math.random() - 0.5) * 0.2;
+        this.c = COLS[Math.floor(Math.random() * COLS.length)];
+        this.a = Math.random() * 0.55 + 0.15;
+        this.ba = this.a;
+        this.ph = Math.random() * Math.PI * 2;
+        this.ps = Math.random() * 0.02 + 0.005;
+        this.glow = this.sz * (4 + Math.random() * 5);
+      }
+      update() {
+        this.ph += this.ps;
+        this.x += this.vx + Math.sin(this.ph * 0.6) * 0.12;
+        this.y += this.vy + Math.cos(this.ph * 0.8) * 0.08;
+        this.a = this.ba + Math.sin(this.ph) * 0.18;
+        this.sz = this.bsz + Math.sin(this.ph * 1.2) * 0.7;
+
+        /* CURSOR REACTION */
+        if (mouse.active) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 250) {
+            const f = (250 - d) / 250;
+            /* Attract gently */
+            this.vx += (dx / d) * f * 0.06;
+            this.vy += (dy / d) * f * 0.06;
+            /* Make brighter & bigger near cursor */
+            this.a = Math.min(1, this.ba + f * 0.6);
+            this.sz = this.bsz + f * 4;
+            this.glow = (this.bsz + f * 4) * (5 + f * 8);
+          }
+        }
+
+        /* Friction */
+        this.vx *= 0.985;
+        this.vy *= 0.985;
+
+        /* Wrap */
+        if (this.x < -40) this.x = W + 30;
+        if (this.x > W + 40) this.x = -30;
+        if (this.y < -40) this.y = H + 30;
+        if (this.y > H + 40) this.y = -30;
+      }
+      draw() {
+        const a = Math.max(0, this.a);
+        /* Glow */
+        const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.glow);
+        g.addColorStop(0, `rgba(${this.c.r},${this.c.g},${this.c.b},${a * 0.4})`);
+        g.addColorStop(0.3, `rgba(${this.c.r},${this.c.g},${this.c.b},${a * 0.1})`);
+        g.addColorStop(1, `rgba(${this.c.r},${this.c.g},${this.c.b},0)`);
+        ctx.fillStyle = g;
+        ctx.fillRect(this.x - this.glow, this.y - this.glow, this.glow * 2, this.glow * 2);
+        /* Core */
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, Math.max(0.3, this.sz), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.c.r},${this.c.g},${this.c.b},${a})`;
+        ctx.fill();
+      }
+    }
+
+    const N = 140;
+    const ps = [];
+    for (let i = 0; i < N; i++) ps.push(new P());
+
+    function drawLines() {
+      for (let i = 0; i < ps.length; i++) {
+        for (let j = i + 1; j < ps.length; j++) {
+          const dx = ps[i].x - ps[j].x;
+          const dy = ps[i].y - ps[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 110) {
+            const al = (1 - d / 110) * 0.08;
+            const gr = ctx.createLinearGradient(ps[i].x, ps[i].y, ps[j].x, ps[j].y);
+            gr.addColorStop(0, `rgba(${ps[i].c.r},${ps[i].c.g},${ps[i].c.b},${al})`);
+            gr.addColorStop(1, `rgba(${ps[j].c.r},${ps[j].c.g},${ps[j].c.b},${al})`);
+            ctx.beginPath();
+            ctx.moveTo(ps[i].x, ps[i].y);
+            ctx.lineTo(ps[j].x, ps[j].y);
+            ctx.strokeStyle = gr;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      /* Lines to cursor */
+      if (mouse.active) {
+        for (let i = 0; i < ps.length; i++) {
+          const dx = mouse.x - ps[i].x;
+          const dy = mouse.y - ps[i].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 200) {
+            const al = (1 - d / 200) * 0.18;
+            const gr = ctx.createLinearGradient(ps[i].x, ps[i].y, mouse.x, mouse.y);
+            gr.addColorStop(0, `rgba(${ps[i].c.r},${ps[i].c.g},${ps[i].c.b},${al})`);
+            gr.addColorStop(1, `rgba(91,206,250,${al * 0.5})`);
+            ctx.beginPath();
+            ctx.moveTo(ps[i].x, ps[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = gr;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    /* Spawn burst particles on click */
+    document.addEventListener('click', e => {
+      for (let i = 0; i < 8; i++) {
+        const p = new P();
+        p.x = e.clientX;
+        p.y = e.clientY;
+        p.vx = (Math.random() - 0.5) * 3;
+        p.vy = (Math.random() - 0.5) * 3;
+        p.sz = Math.random() * 3 + 1.5;
+        p.bsz = p.sz;
+        p.a = 0.9;
+        p.ba = 0.5;
+        p.glow = p.sz * 8;
+        ps.push(p);
+      }
+      /* Keep count manageable */
+      while (ps.length > N + 40) ps.shift();
+    });
+
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      ps.forEach(p => { p.update(); p.draw(); });
+      drawLines();
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    /* ==========================================
+       CURSOR GLOW — smooth follow
+       ========================================== */
+    const glow = document.getElementById('cursorGlow');
+    let gX = 0, gY = 0, tX = 0, tY = 0;
+    document.addEventListener('mousemove', e => { tX = e.clientX; tY = e.clientY; });
+    (function glowLoop() {
+      gX += (tX - gX) * 0.07;
+      gY += (tY - gY) * 0.07;
+      glow.style.transform = `translate(${gX - 200}px, ${gY - 200}px)`;
+      requestAnimationFrame(glowLoop);
+    })();
+
+    /* ==========================================
+       LINK HOVER — dynamic shine position
+       ========================================== */
+    document.querySelectorAll('.link').forEach(link => {
+      link.addEventListener('mousemove', e => {
+        const r = link.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        link.style.setProperty('--mx', x + 'px');
+        link.style.setProperty('--my', y + 'px');
+      });
+    });
+
+    /* ==========================================
+       LINK ENTRANCE
+       ========================================== */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.link').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
