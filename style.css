@@ -205,6 +205,28 @@ body {
   pointer-events: none;
 }
 
+.bio-text {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  
+  /* Тот самый градиент */
+  background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Немного магии, чтобы он медленно двигался */
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+
 /* ============ Flag Bar ============ */
 .flag-bar {
   display: flex;
