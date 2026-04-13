@@ -284,24 +284,30 @@ window.addEventListener('resize', () => {
 
     function drawLines() {
       for (let i = 0; i < ps.length; i++) {
+        let links = 0; // <-- ДОБАВЛЕНО: счетчик связей
         for (let j = i + 1; j < ps.length; j++) {
           const dx = ps[i].x - ps[j].x;
           const dy = ps[i].y - ps[j].y;
           const d = Math.sqrt(dx * dx + dy * dy);
+          
           if (d < 110) {
-            const al = (1 - d / 110) * 0.08;
-            const gr = ctx.createLinearGradient(ps[i].x, ps[i].y, ps[j].x, ps[j].y);
-            gr.addColorStop(0, `rgba(${ps[i].c.r},${ps[i].c.g},${ps[i].c.b},${al})`);
-            gr.addColorStop(1, `rgba(${ps[j].c.r},${ps[j].c.g},${ps[j].c.b},${al})`);
+            links++;
+            if (links > 5) break; // <-- ОГРАНИЧЕНИЕ: не больше 5 линий от одной частицы
+
+            const al = (1 - d / 110) * 0.15;
+            
+            // <-- УБРАНО: тяжелый расчет градиентов
+            // Вывод сплошным цветом рисуется видеокартой в десятки раз быстрее
             ctx.beginPath();
             ctx.moveTo(ps[i].x, ps[i].y);
             ctx.lineTo(ps[j].x, ps[j].y);
-            ctx.strokeStyle = gr;
+            ctx.strokeStyle = `rgba(${ps[i].c.r}, ${ps[i].c.g}, ${ps[i].c.b}, ${al})`; 
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
       }
+      
       /* Lines to cursor */
       if (mouse.active) {
         for (let i = 0; i < ps.length; i++) {
@@ -310,13 +316,10 @@ window.addEventListener('resize', () => {
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < 200) {
             const al = (1 - d / 200) * 0.18;
-            const gr = ctx.createLinearGradient(ps[i].x, ps[i].y, mouse.x, mouse.y);
-            gr.addColorStop(0, `rgba(${ps[i].c.r},${ps[i].c.g},${ps[i].c.b},${al})`);
-            gr.addColorStop(1, `rgba(91,206,250,${al * 0.5})`);
             ctx.beginPath();
             ctx.moveTo(ps[i].x, ps[i].y);
             ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = gr;
+            ctx.strokeStyle = `rgba(${ps[i].c.r}, ${ps[i].c.g}, ${ps[i].c.b}, ${al})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
